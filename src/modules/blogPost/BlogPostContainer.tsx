@@ -5,22 +5,26 @@ export const BlogPostContainer = () => {
     {
       title: 'Flight to Chicago',
       body: 'I got arrested by security',
-      date: new Date()
+      date: new Date(),
+      verified: true,
     },
     {
       title: 'Flight to Chicago',
       body: 'I got arrested by security',
-      date: new Date()
+      date: new Date(),
+      verified: true,
     },
     {
       title: 'Flight to Chicago',
       body: 'I got arrested by security',
-      date: new Date()
+      date: new Date(),
+      verified: false,
     },
     {
       title: 'Flight to Chicago',
       body: 'I got arrested by security',
-      date: new Date()
+      date: new Date(),
+      verified: false,
     }
   ]
 
