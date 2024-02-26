@@ -1,6 +1,9 @@
 import './BlogPost.css'
 
 export interface BlogPostProps {
+   /**
+   * The title of the Blog Post
+   */
   title: string
   body: string
   date: Date
@@ -8,7 +11,7 @@ export interface BlogPostProps {
 }
 
 export const BlogPost = ({
-  title,
+  title = 'Some Title',
   body,
   date, 
   verified
