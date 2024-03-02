@@ -8,21 +8,28 @@ import {
   RouterProvider,
 } from 'react-router-dom'
 import { createRoot } from 'react-dom/client'
-import { BlogPostContainer } from './modules/blogPost'
-import { Login } from './modules/login';
+import { Pets } from './modules/pets'
+import { AboutMe } from './modules/aboutMe';
+import { Root } from './App'
 
 
 
 const router = createBrowserRouter([
   {
-    path: '/',
-    element: <Login />
-  },
-  {
-    path: '/blog',
-    element: <BlogPostContainer />
-  }
-])
+      path: "/",
+      element: <Root />,
+      children: [
+        {
+          path: '/',
+          element: <AboutMe />
+        },
+        {
+          path: '/pets',
+          element: <Pets />
+        }
+      ]
+    }
+  ])
 
 const App = () => {
   return (
