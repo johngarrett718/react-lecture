@@ -1,4 +1,4 @@
-import { BlogPost } from './BlogPost'
+import { BlogPostPretty } from './BlogPostPretty'
 
 export const BlogPostContainer = () => {
   const posts = [
@@ -31,7 +31,7 @@ export const BlogPostContainer = () => {
   return (
     <>
       {
-        posts.map((post, index) => <BlogPost key={index} {...post} />)
+        posts.map((post, index) => <BlogPostPretty key={index} {...post} />)
       }
     </>
   )
