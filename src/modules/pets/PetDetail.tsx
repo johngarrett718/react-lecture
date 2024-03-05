@@ -1,43 +1,43 @@
+/* eslint-disable jsx-a11y/alt-text */
+
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
-import Divider from '@mui/material/Divider';
-//import './BlogPost.css'
+import './Pets.css'
 
-export interface BlogPostProps {
+export interface PetProps {
    /**
    * The title of the Blog Post
    */
   title: string
-  body: string
-  date: Date
-  verified?: boolean
+  description: string
+  imgSrc: string
 }
 
 export const PetDetail = ({
   title = 'Some Title',
-  body,
-  date, 
-  verified
-}: BlogPostProps) => {
-  const backgroundColor = verified ? 'lightBlue' : undefined
+  description = 'Some Description',
+  imgSrc
+
+}: PetProps) => {
   return (
-    <Paper className='blogPostPretty' style={{ backgroundColor }}>
+    <Paper className='center'>
       <div style={{ display: 'flex', flexDirection: 'row' }}>
         <span style={{ flex: '1'}}>
           <Typography variant="h4" gutterBottom>
             {title}
           </Typography>
         </span>
-        <span>
-          <Typography variant="subtitle1" gutterBottom>
-            {date.toLocaleDateString()}
+      </div>
+      <div style={{ display: 'flex', flexDirection: 'row' }}>
+        <span style={{ flex: '1'}}>
+          <Typography variant="h4" gutterBottom>
+            <img src={imgSrc} />
           </Typography>
         </span>
       </div>
-      <Divider />
       <div style={{ marginTop: '10px'}}>
         <Typography variant="body1" gutterBottom>
-          {body}
+          <div style={{ width: '400px' }}>{description}</div>
         </Typography>
       </div>
     </Paper>

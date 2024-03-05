@@ -33,14 +33,12 @@ export const Nav = () => {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar position="static" style={{marginBottom: '10px'}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
             variant="h6"
             noWrap
-            component="a"
-            //href="#app-bar-with-responsive-menu"
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
@@ -89,36 +87,17 @@ export const Nav = () => {
               ))}
             </Menu>
           </Box>
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href="#app-bar-with-responsive-menu"
-            sx={{
-              mr: 2,
-              display: { xs: 'flex', md: 'none' },
-              flexGrow: 1,
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
-            }}
-          >
-            LOGO
-          </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
               <Button
                 key={page.display}
-                onClick={handleCloseNavMenu}
+                onClick={() => navigate(page.url)}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
                 {page.display}
               </Button>
             ))}
           </Box>
-
           <Box sx={{ flexGrow: 0 }}>
           </Box>
         </Toolbar>
